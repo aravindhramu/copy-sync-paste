@@ -12,7 +12,11 @@ FILE_NAME = "avi_clips.txt"
 FOLDER_IN_DEVICE = "Aravindh"
 
 def discover():
-    devices = bluetooth.discover_devices()
+    devices = []
+    try:
+        devices = bluetooth.discover_devices()
+    except:
+        pass
     return devices
 
 def findServicePort(devices,device_name,service_name):
