@@ -37,7 +37,6 @@ import android.text.ClipboardManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.WindowManager;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends Activity {
@@ -73,6 +72,20 @@ public class MainActivity extends Activity {
 		
 	}
 
+	public void onDestroy(){
+		super.onDestroy();
+		bt.disable();
+	}
+	
+	public void onResume(){
+		super.onResume();
+		
+	}
+	
+	public void onPause(){
+		super.onPause();
+		}
+	
 	public void onListen(View view){
 		Intent enabler = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
 		startActivityForResult(enabler,DISCOVERY_REQUEST);
