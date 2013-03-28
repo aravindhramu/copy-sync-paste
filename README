@@ -9,5 +9,4 @@ Steps to use :
 ------------
 
 1) Install the .apk file ( CopySyncPasteServer/bin/CopySyncPasteServer.apk ) in the android device. 
-2) Run the client ( CopySyncPasteClient/csp_client.py )from the PC to sync the PC's clipboard contents 
-   to mobile device.
+2) Run the client ( CopySyncPasteClient/csp_client.py )from the PC to sync the PC's clipboard contents to mobile device.
