@@ -10,3 +10,20 @@ Steps to use :
 
 1) Install the .apk file ( CopySyncPasteServer/bin/CopySyncPasteServer.apk ) in the android device. 
 2) Run the client ( CopySyncPasteClient/csp_client.py )from the PC to sync the PC's clipboard contents to mobile device.
+
+Dependencies required in Linux :
+-------------------------------
+
+1) yum install bluez bluez-libs bluez-libs-devel
+
+2) wget http://pybluez.googlecode.com/files/PyBluez-0.18.tar.gz;
+   tar -xvzf PyBluez-0.18.tar.gz;
+   cd PyBluez-0.18;
+   python setup.py install;
+
+3) wget https://pypi.python.org/packages/source/P/PyOBEX/PyOBEX-0.10.zip#md5=cfa8d0620045e2e24296aea0d5e31914;
+   unzip PyOBEX-0.10.zip;
+   cd PyOBEX-0.10; python setup.py install;
+
+
+Note: Android app tested against version 2.3 ( Gingerbread) only.
