@@ -38,6 +38,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
+@SuppressWarnings("deprecation")
 public class MainActivity extends Activity {
 	  private static int DISCOVERY_REQUEST = 1;
 	  private AlertDialog.Builder alertdialogbuilder;
