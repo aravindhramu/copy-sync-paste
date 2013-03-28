@@ -63,8 +63,13 @@ def getClipBoardContents():
     text = clipboard.wait_for_text()
     return text
 
+def setClipBoardContents(text):
+    clipboard = gtk.clipboard_get()
+    clipboard.set_text(text)
+    clipboard.store()
 
-if __name__ == "__main__":
+
+def main_client():
     print "Searching for devices.."
     devices = discover()
     if devices == []:
@@ -108,5 +113,43 @@ if __name__ == "__main__":
     print "Done."
 
 
+def main_server():
+    server_sock=bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+    #port = bluetooth.get_available_port(bluetooth.RFCOMM)
+    server_sock.bind(("",0))
+    server_sock.listen(1)
+    port = server_sock.getsockname()[1]
+    print "listening on port %d" % port
+    uuid = "00001101-0000-1000-8000-00805F9B34FB"
+    bluetooth.advertise_service( server_sock, "Copy-Sync-Paste", service_id=uuid )
+    client_sock,address = server_sock.accept()
+    print "Accepted connection from ",address
+    clip_text = ""
+    while True:
+        try:
+            text = client_sock.recv(1024)
+            if len(text)!=0:
+                clip_text=clip_text + text
+            else:
+                break
+        except Exception as e:
+            pass
+            break
+    print clip_text
+    bluetooth.stop_advertising(server_sock)
+    server_sock.close()
+    client_sock.close()
+    setClipBoardContents(clip_text)
+    print getClipBoardContents()
+    print "Done."
+
+
+
+
+if __name__ == "__main__":
+    if sys.argv[1] == '1':
+        main_client()
+    elif sys.argv[1] == '2':
+        main_server()
 
 

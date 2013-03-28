@@ -11,12 +11,33 @@
     tools:context=".MainActivity" >
 
     <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="188dp"
+        android:onClick="onClient"
+        android:text="@string/start_client" />
+
+    <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/start_server"
-        android:onClick="onListen" />
+        android:layout_marginBottom="89dp"
+        android:onClick="onListen"
+        android:text="@string/start_server" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="37dp"
+        android:onClick="onQuit"
+        android:text="@string/quit" />
 
 </RelativeLayout>
