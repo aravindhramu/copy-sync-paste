@@ -37,6 +37,7 @@ import android.text.ClipboardManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.WindowManager;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends Activity {
