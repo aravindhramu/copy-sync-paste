@@ -3,13 +3,14 @@ Copy-Sync-Paste
 
 Copy-Sync-paste is a tool to seamlessly synchronize clipboard across devices.
 
-Presently, works between a Linux PC and android devices.
+Presently, works between Linux PC and android devices.
 
 Steps to use :
 ------------
 
-1) Install the .apk file ( CopySyncPasteServer/bin/CopySyncPasteServer.apk ) in the android device. 
-2) Run the client ( CopySyncPasteClient/csp_client.py )from the PC to sync the PC's clipboard contents to mobile device.
+1) Install the .apk file ( CopySyncPaste-Android/bin/CopySyncPasteServer.apk ) in the android device. 
+2) Run 'python csp_client 1' ( CopySyncPaste-PC/csp_client.py ) from the PC to sync the PC's clipboard contents to mobile device.
+Run 'python csp_client 2' to sync mobile's clipboard contents to PC
 
 Dependencies required in Linux :
 -------------------------------
